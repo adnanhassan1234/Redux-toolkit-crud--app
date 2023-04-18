@@ -1,10 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_ENDPOINT = 'https://643e4289c72fda4a0bf15e0d.mockapi.io/crud';
+
 // create a user data
 export const createUser = createAsyncThunk("createUser", async (data) => {
     try {
-      const response = await axios.post('https://643e4289c72fda4a0bf15e0d.mockapi.io/crud', data);
+      const response = await axios.post(API_ENDPOINT, data);
       return response.data;
     } catch (error) {
       throw error;
@@ -14,7 +16,7 @@ export const createUser = createAsyncThunk("createUser", async (data) => {
   //  read a user all data
   export const showUser = createAsyncThunk("showUser", async () => {
     try {
-      const response = await axios.get('https://643e4289c72fda4a0bf15e0d.mockapi.io/crud');
+      const response = await axios.get(API_ENDPOINT);
       return response.data;
     } catch (error) {
       throw error;
@@ -25,7 +27,7 @@ export const createUser = createAsyncThunk("createUser", async (data) => {
   //  delete a user all data
 export const deleteUser = createAsyncThunk("deleteUser", async (id) => {
     try {
-      await axios.delete(`https://643e4289c72fda4a0bf15e0d.mockapi.io/crud/${id}`);
+      await axios.delete(`${API_ENDPOINT}/${id}`);
       return id;
     } catch (error) {
       throw error;

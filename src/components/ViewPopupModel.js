@@ -23,7 +23,7 @@ const ViewPopupModel = (props) => {
                 <p><b>AGE :</b> {selectedData.age}</p>
                 <Col className="p-4 d-flex justify-content-center">
                   <Button onClick={props.onHide} variant={"outline-warning"}>
-                    CANCEL
+                    CANCEL 
                   </Button>
                   {/* <Button className="btn  btn-delete  mx-2 ">
                       SAVE CHANGES
