@@ -33,16 +33,32 @@ export const deleteUser = createAsyncThunk("deleteUser", async (id) => {
       throw error;
     }
   });
-  
 
+  //  Update a user all data
+  export const updateUser = createAsyncThunk("updateUser", async (data) => {
+    try {
+      const response = await axios.put(`${API_ENDPOINT}/${data.id}` , data);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  });
+  
+  
 const userDetailsSlice = createSlice({
   name: "usersDetails",
   initialState: {
     users: [],
     isLoading: false,
     error: false,
+    searchTerm: "",
   },
-  reducers: {},
+  reducers: {
+    // search functionality
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+    },
+  },
  
   // create a user data by POST method
   extraReducers: (builder) => {
@@ -92,7 +108,32 @@ const userDetailsSlice = createSlice({
         state.error = action.payload.message;
 
     });
+
+    //  Update a user data by single
+        builder.addCase(updateUser.pending , (state , action) => {
+        state.isLoading = true;
+        
+    });
+    builder.addCase(updateUser.fulfilled , (state , action) => {
+        state.isLoading = false;
+       // remove the deleted user from the users array
+        state.users = state.users.map((ele) => 
+          ele.id === action.payload.id ? action.payload : ele
+        );
+        
+        
+
+    });
+    builder.addCase(updateUser.rejected , (state , action) => {
+        console.log("Error" , action.payload);
+        state.error = action.payload.message;
+
+    });
   },
 });
+
+
+
+export const { setSearchTerm } = userDetailsSlice.actions;
 
 export default userDetailsSlice.reducer;

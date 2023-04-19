@@ -1,38 +1,48 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createUser } from "../features/UserDetailsSlice";
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { updateUser } from "../features/UserDetailsSlice";
 
-
-const Create = () => {
+const Update = () => {
+  let { id } = useParams();
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [formData, setFormData] = useState({});
 
-const handleChange = (event) => {
-  let value = event.target.value;
-  let name = event.target.name;
-  setFormData((prevalue) => {
-    return {
-      ...prevalue, // Spread Operator
-      [name]: value,
-    };
-  });
-}
+  const [updateData, setUpdateData] = useState();
+  const userData = useSelector((state) => state.app.users);
+//   console.log("🚀 ~ file: Update.js:14 ~ Update ~ userData:", userData)
+
+  useEffect(() => {
+    if (id) {
+      const singleUserData = userData.filter((ele) => ele.id === id);
+      setUpdateData(singleUserData[0]);
+    }
+  }, []);
+
+  const handleChange = (event) => {
+    let value = event.target.value;
+    let name = event.target.name;
+    setUpdateData((prevalue) => {
+      return {
+        ...prevalue, // Spread Operator
+        [name]: value,
+      };
+    });
+  };
 
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(createUser(formData));
+    dispatch(updateUser(updateData));
     navigate('/read'); // navigate to the 'new-route' pat
-    console.log(" submitForm ~ formData:", formData);
+   
   };
 
   return (
     <>
       <div className="create_form my-5">
         <div className="container">
-          <h3 className="text-center mb-3">Please fill this form</h3>
+          <h3 className="text-center mb-3">Update data</h3>
           <div className="full  p-4">
             <form onSubmit={submitForm}>
               <div className="mb-3">
@@ -43,8 +53,9 @@ const handleChange = (event) => {
                   name="name"
                   type="text"
                   required
+                  value={updateData && updateData.name}
                   className="form-control"
-                  onChange={handleChange}
+                    onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
@@ -55,8 +66,9 @@ const handleChange = (event) => {
                   type="email"
                   name="email"
                   required
+                  value={updateData && updateData.email}
                   className="form-control"
-                  onChange={handleChange}
+                    onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
@@ -67,8 +79,9 @@ const handleChange = (event) => {
                   name="age"
                   type="text"
                   required
+                  value={updateData && updateData.age}
                   className="form-control"
-                  onChange={handleChange}
+                    onChange={handleChange}
                 />
               </div>
               <div className="mb-3">
@@ -79,6 +92,7 @@ const handleChange = (event) => {
                     name="gender"
                     value="male"
                     required
+                    checked={updateData && updateData.gender === "male"}
                     onChange={handleChange}
                   />
                   <label className="form-check-label">Male</label>
@@ -90,6 +104,7 @@ const handleChange = (event) => {
                     name="gender"
                     required
                     value="Female" // change "Female" to "female"
+                    checked={updateData && updateData.gender === "Female"}
                     onChange={handleChange}
                   />
                   <label className="form-check-label">Female</label>
@@ -97,7 +112,7 @@ const handleChange = (event) => {
               </div>
               <div className="text-center">
                 <button type="submit" className="btn btn-primary w-50">
-                  Submit
+                  Update
                 </button>
               </div>
             </form>
@@ -108,4 +123,4 @@ const handleChange = (event) => {
   );
 };
 
-export default Create;
+export default Update;
