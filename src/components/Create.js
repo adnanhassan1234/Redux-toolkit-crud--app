@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createUser } from "../features/UserDetailsSlice";
 import { useNavigate } from 'react-router-dom';
 
@@ -8,6 +8,8 @@ const Create = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const userData = useSelector((state) => state.login);
+  // console.log("🚀 ~ file: Create.js:12 ~ Create ~ userData:", userData);
   const [formData, setFormData] = useState({});
 
 const handleChange = (event) => {
@@ -28,6 +30,13 @@ const handleChange = (event) => {
     console.log(" submitForm ~ formData:", formData);
   };
 
+
+    // Check if user is logged in
+    if (!userData.accessToken) {
+      navigate('/'); // Redirect to login page
+      return null;
+    }
+
   return (
     <>
       <div className="create_form my-5">
@@ -36,7 +45,14 @@ const handleChange = (event) => {
           <div className="full  p-4">
             <form onSubmit={submitForm}>
               <div className="mb-3">
-                <label for="exampleInputEmail1" className="form-label">
+              <input
+                  name="email"
+                  type="email"
+                  value={userData.user.email}
+                  className="form-control"
+                  disabled
+                />
+                <label for="exampleInputEmail1" className="form-label mt-2">
                   Name
                 </label>
                 <input

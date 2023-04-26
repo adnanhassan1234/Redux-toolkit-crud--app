@@ -1,0 +1,93 @@
+/* login responsive */
+@media screen and (max-width: 997px) {
+    .login .login_form .account_button .btn-first {
+      height: auto !important;
+    }
+    .login .login_form .account_button .btn-second {
+      height: auto !important;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    .login .box {
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+    .login .login_form .account_button .btn-first {
+      padding: 14px 34px;
+      gap: 14px;
+      width: 236.38px;
+      height: auto !important;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .login .login_form .account_button .btn-second {
+      height: auto !important;
+      width: 100%;
+    }
+    .login .login_content .account_detail {
+      width: 100%;
+      padding: 16px !important;
+      height: 126.49px;
+      left: 247.68px;
+      top: 715.47px;
+      background: #ffffff;
+      box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+      border-radius: 11.6971px;
+      display: flex;
+      /* justify-content: flex-start; */
+      align-items: center;
+      flex-direction: column;
+    }
+    .login .login_form .account_button {
+      display: flex;
+      height: auto !important;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* sign-up responsive */
+  @media screen and (max-width: 997px) {
+    .sign_up .login_form .account_button .btn-first {
+      height: auto !important;
+    }
+    .sign_up .login_form .account_button .btn-second {
+      height: auto !important;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    .sign_up .box {
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+    .sign_up .login_form .account_button .btn-first {
+      padding: 14px 34px;
+      gap: 14px;
+      width: 236.38px;
+      height: auto !important;
+      margin-bottom: 15px;
+    }
+    .sign_up .login_form .account_button .btn-second {
+      height: auto !important;
+    }
+    .sign_up .login_content .account_detail {
+      width: 100%;
+      padding: 16px !important;
+      height: 126.49px;
+      left: 247.68px;
+      top: 715.47px;
+      background: #ffffff;
+      box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+      border-radius: 11.6971px;
+      display: flex;
+      /* justify-content: flex-start; */
+      align-items: center;
+      flex-direction: column;
+    }
+    .sign_up .login_form .account_button {
+      display: flex;
+      height: auto !important;
+      flex-direction: column;
+    }
+  }
+  

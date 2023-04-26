@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h4,
+h6,
+label {
+  font-family: "Lato", sans-serif;
+}
+
+/* ====  login css ====== */
+.login {
+  width: 100%;
+  /* background-color:aqua; */
+  padding: 70px 0px 70px 0px;
+}
+.login .bg {
+  background-color: #eff6fe;
+}
+.login .login_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px !important;
+  background: #eff6fe;
+  border-radius: 19.4952px 0px 0px 19.4952px;
+  overflow: hidden;
+}
+.login .login_content img {
+  width: 400px;
+  height: 100%;
+}
+.login .login_content h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 29px;
+  /* text-align: center; */
+  color: #444444;
+}
+.login .login_content .account_detail {
+  width: 387.76px;
+  height: 58.49px;
+  left: 247.68px;
+  top: 715.47px;
+  background: #ffffff;
+  box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+  border-radius: 11.6971px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.login .login_content .account_detail .btn {
+  padding: 1.94952px 19.4952px;
+  gap: 14.62px;
+  width: 142.99px;
+  height: 33.9px;
+  color: white;
+  background: #faba01 !important;
+  box-shadow: 0px 5.84855px 18.5204px rgba(250, 186, 1, 0.3);
+  border-radius: 5.84855px;
+}
+.login .login_form .account_button .btn-first {
+  padding: 14px 34px;
+  gap: 14px;
+  width: 236.38px;
+  height: 49.24px;
+  background: #faba01 !important;
+  border-radius: 9px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19.4952px;
+  line-height: 19px;
+  color: #002d5d;
+}
+.login .login_form .account_button .btn-second {
+  padding: 14px 34px;
+  gap: 14px;
+  border-radius: 9px;
+  font-family: "Lato", sans-serif;
+  padding: 14px 34px;
+  gap: 18px;
+  width: 236px;
+  height: 49px;
+  background: #002d5d;
+  border-radius: 9.74758px;
+  font-size: 19px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.login .login_form .account_button {
+  background: #ffffff;
+  box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-around;
+  padding: 7px;
+}
+.login .login_form h5 {
+  padding: 5px 0px 5px 0px;
+}
+.login .login_form h5 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31.1922px;
+  line-height: 43px;
+  color: #002d5d;
+  text-align: center;
+}
+.login .login_form .submit {
+  width: 100% !important;
+  padding: 13.6466px 29.2427px;
+  gap: 14.62px;
+  background: #faba01;
+  box-shadow: 0px 5.84855px 18.5204px rgba(250, 186, 1, 0.3);
+  border-radius: 11.6971px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.5456px;
+  line-height: 29px;
+  text-align: center;
+  color: #444444;
+}
+.login .box {
+  background: #ffffff;
+  box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+  border-radius: 19.4952px;
+}
+.login label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+  color: #444444;
+}
+.login input {
+  border: 1px solid rgba(0, 45, 93, 0.17);
+  border-radius: 10px;
+}
+
+/* ====  sign up css ====== */
+.sign_up {
+  width: 100%;
+  /* background-color:aqua; */
+  padding: 70px 0px 70px 0px;
+}
+.sign_up .bg {
+  background-color: #eff6fe;
+}
+.sign_up .login_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px !important;
+  background: #eff6fe;
+  border-radius: 19.4952px 0px 0px 19.4952px;
+  overflow: hidden;
+}
+.sign_up .login_content img {
+  width: 400px;
+  width: 100%;
+}
+.sign_up .login_content h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 30px;
+  color: #444444;
+}
+.sign_up .login_content .account_detail {
+  width: 387.76px;
+  height: 58.49px;
+  left: 247.68px;
+  top: 715.47px;
+  background: #ffffff;
+  box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+  border-radius: 11.6971px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.sign_up .login_content .account_detail .btn {
+  padding: 2px 20px !important;
+  gap: 14.62px;
+  width: 142.99px;
+  height: 33.9px;
+  color: white;
+  background: #faba01 !important;
+  box-shadow: 0px 5.84855px 18.5204px rgba(250, 186, 1, 0.3);
+  border-radius: 5.84855px;
+  font-size: 18px;
+}
+.sign_up .login_form .account_button .btn-first {
+  padding: 14px 34px;
+  gap: 14px;
+  width: 236.38px;
+  height: 49.24px;
+  background: #faba01 !important;
+  border-radius: 9px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19.4952px;
+  line-height: 19px;
+  color: #002d5d;
+}
+.sign_up .login_form .account_button .btn-second {
+  padding: 14px 34px;
+  gap: 14px;
+  border-radius: 9px;
+  font-family: "Lato", sans-serif;
+  padding: 14px 34px;
+  gap: 18px;
+  width: 236px;
+  height: 49px;
+  background: #002d5d;
+  border-radius: 9.74758px;
+  font-size: 19px;
+  line-height: 19px;
+  color: #ffffff;
+}
+.sign_up .login_form .account_button {
+  background: #ffffff;
+  box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-around;
+  padding: 7px;
+}
+.sign_up .login_form h5 {
+  padding: 5px 0px 5px 0px;
+}
+.sign_up .login_form h5 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 31.1922px;
+  line-height: 43px;
+  color: #002d5d;
+}
+.sign_up .login_form h6 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #909296;
+}
+.sign_up .login_form .submit {
+  width: 100% !important;
+  padding: 13.6466px 29.2427px;
+  gap: 14.62px;
+  background: #faba01;
+  box-shadow: 0px 5.84855px 18.5204px rgba(250, 186, 1, 0.3);
+  border-radius: 11.6971px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.5456px;
+  line-height: 29px;
+  text-align: center;
+  color: #444444;
+}
+.sign_up .box {
+  background: #ffffff;
+  box-shadow: 0px 0px 14.6214px rgba(0, 0, 0, 0.1);
+  border-radius: 19.4952px;
+}
+.sign_up label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 30px;
+  color: #444444;
+}
+.sign_up input {
+  border: 1px solid rgba(0, 45, 93, 0.17);
+  border-radius: 10px;
+}
+.sign_up span {
+  color: #faba01;
+}
