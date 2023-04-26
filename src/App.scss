@@ -15,8 +15,22 @@ body {
   h3 {
     text-align: center !important;
   }
+
   .card {
     max-width: 660px !important;
     margin: auto !important;
   }
 }
+
+
+.cart {
+  .full{
+    background-color: white;
+    border-radius: 6px;
+  }
+ 
+    img {
+      width: 60px;
+    }
+  }
+

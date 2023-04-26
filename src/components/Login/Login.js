@@ -28,8 +28,8 @@ const Login = () => {
   const submitForm = (e) => {
     e.preventDefault();
     dispatch(loginUser(formData));
-    navigate('/home');
-    console.log(" submitForm ~ formData:", formData);
+    navigate('/main');
+    // console.log(" submitForm ~ formData:", formData);
   };
 
   return (

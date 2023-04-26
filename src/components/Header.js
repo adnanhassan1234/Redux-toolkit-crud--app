@@ -15,6 +15,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const apiAllData = useSelector((state) => state.app.users);
   const accessToken = useSelector((state) => state.login.accessToken);
+  const Item = useSelector((state) => state.cart);
 
   const handleSearchChange = (event) => {
     dispatch(setSearchTerm(event.target.value));
@@ -28,12 +29,15 @@ const Header = () => {
     <>
       <Navbar bg="light" expand="lg">
         <div className="container-fluid ms-4">
-          <NavLink exact to="/home" className="navbar-brand">
-            RTK
+          <NavLink exact to="/main" className="navbar-brand">
+            Redux ToolKit
           </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
+              <Nav.Link exact as={NavLink} to="/main" activeClassName="active">
+                Main Page
+              </Nav.Link>
               <Nav.Link exact as={NavLink} to="/home" activeClassName="active">
                 Create Post
               </Nav.Link>
@@ -53,19 +57,29 @@ const Header = () => {
             {accessToken ? (
               <button
                 type="button"
-                className="btn btn-success"
+                className="btn btn-success my-1"
                 onClick={handleLogout}
               >
                 LOGOUT
               </button>
             ) : (
               <NavLink to="/">
-                <button type="button" className="btn btn-success mx-1">
+                <button type="button" className="btn btn-success mx-1 my-1">
                   LOGIN
                 </button>
               </NavLink>
             )}
+            <Nav.Link
+            exact
+            as={NavLink}
+            to="/cart"
+            className="mx-3"
+            activeClassName="active"
+          >
+           <b> Cart ({Item.length})</b>
+          </Nav.Link>
           </Navbar.Collapse>
+       
         </div>
       </Navbar>
     </>

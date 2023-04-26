@@ -5,6 +5,9 @@ import ReadData from "./components/ReadData";
 import Create from "./components/Create";
 import Update from "./components/Update";
 import Login from "./components/Login/Login";
+import MainPage from "./pages/MainPage/MainPage";
+import Cart from "./components/Cart/Cart";
+
 
 const App = () => {
   return (
@@ -16,6 +19,8 @@ const App = () => {
           <Route exact path="/read" element={<ReadData />} />
           <Route exact path="/" element={<Login />} />
           <Route exact path="/update/:id" element={<Update />} />
+          <Route exact path="/main" element={<MainPage />} />
+          <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </>
