@@ -69,7 +69,7 @@ const Header = () => {
                 </button>
               </NavLink>
             )}
-            <Nav.Link
+               <Nav.Link
             exact
             as={NavLink}
             to="/cart"

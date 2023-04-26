@@ -8,6 +8,7 @@ const Cart = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.login);
   const products = useSelector((state) => state.cart);
+  
 
   const [quantities, setQuantities] = useState(
     products.reduce((acc, curr) => ({ ...acc, [curr.id]: curr.quantity }), {})
